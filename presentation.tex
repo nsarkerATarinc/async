@@ -1,0 +1,104 @@
+\documentclass{beamer}
+\usetheme{Antibes}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=false,rounded=false]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+\author{nsarker@arinc.com}
+\title{Asynchronous Programming}
+\date{}
+
+
+\begin{document}
+\small
+
+\begin{frame}
+    \titlepage
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Programming Models: Sequential}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Programming Models: Threaded}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Programming Models: Asynchronous}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Event Loop}
+What is an \textit{event loop}, or \textit{reactor}? Think of them as task queues.
+
+\begin{quote}
+    The event loop is a programming construct that waits for and dispatches events or messages in a program. It works by calling some internal or external “event provider”, which generally blocks until an event has arrived, and then calls the relevant event handler (“dispatches the event”). - Twisted
+\end{quote}
+
+Chances are you've seen event loop syntax in the past:
+\begin{quote}
+    \begin{semiverbatim}
+    - app.run("0.0.0.0", 8888)
+
+    - loop.start()
+    \end{semiverbatim}
+\end{quote}
+
+Libraries:
+
+\begin{tabular}{l l l l l}
+    Twisted & Tornado & asyncio & gevent & uvloop
+\end{tabular}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{"Why can't I just use a while loop?"}
+A simple loop is very inefficient. Most modern async frameworks are built on top of \textit{poll/epoll} (Linux), \textit{kqueue} (BSD/MacOS), or \textit{select} (most operating systems).
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Deferreds, Coroutines, Futures}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Asynchronous != Magic}
+\end{frame}
+
+
+\section{Asynchronous Web Development}
+\begin{frame}
+\frametitle{Breaking Up Work}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Database Connections}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{External Requests}
+\end{frame}
+
+\end{document}

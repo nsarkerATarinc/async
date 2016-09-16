@@ -1,5 +1,7 @@
 \documentclass{beamer}
-\usetheme{Antibes}
+\usetheme{Rochester}
+%\usecolortheme{albatross}
+
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -31,16 +33,42 @@
 
 \begin{frame}
 \frametitle{Programming Models: Sequential}
+\begin{columns}[T]
+    \begin{column}{0.1\textwidth}
+        \includegraphics[scale=0.5]{images/sync.png}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        Synchronous or sequential execution occurs one after another.
+    \end{column}
+\end{columns}
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Programming Models: Threaded}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \includegraphics[scale=0.4]{images/threaded.png}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        Synchronous or sequential execution occurs one after another.
+    \end{column}
+\end{columns}
+
 \end{frame}
 
 
 \begin{frame}
 \frametitle{Programming Models: Asynchronous}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+        \includegraphics[scale=0.4]{images/async.png}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        Asynchronous paradigm.
+    \end{column}
+\end{columns}
+
 \end{frame}
 
 
@@ -78,6 +106,34 @@ A simple while loop is very inefficient. Most modern async frameworks are built 
 
 \begin{frame}
 \frametitle{Deferreds, Coroutines, Futures}
+\begin{columns}
+    \begin{column}{0.45\textwidth}
+        Deferred
+        \begin{semiverbatim}
+            d = Deferred()
+            d.addCallback(f1)
+            d.addCallback(f2)
+            d.callback('result')
+        \end{semiverbatim}
+    \end{column}
+    \begin{column}{0.35\textwidth}
+        Futures
+        \begin{semiverbatim}
+            d = Futures()
+            d.addCallback(f1)
+            d.addCallback(f2)
+            d.callback('result')
+        \end{semiverbatim}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+        Coroutine
+        \begin{semiverbatim}
+            async def coroutine():
+                d = await func()
+                return d
+        \end{semiverbatim}
+    \end{column}
+\end{columns}
 \end{frame}
 
 
